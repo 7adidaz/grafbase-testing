@@ -1,0 +1,13 @@
+type Name{
+  id: ID!
+  name: String!
+}
+
+extend type Mutation {
+  createName(input: CreateNameInput!): Name 
+  @resolver(name: "create-name")
+}
+
+input CreateNameInput{
+  name: String!
+}
